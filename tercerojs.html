@@ -1,0 +1,70 @@
+<!doctype html> <!-- Define el documento bajo HTML5 -->
+<html>
+  <!-- parrafos, enlaces y elementos ul -->
+	<head>
+		<title>tercero</title>
+	</head>
+
+  <body>
+
+    <h1>Cantidad de elememtos </h1>
+
+    <br>
+
+    <!-- Esto es para pruebas, después borramos -->
+    <p>Parrafo a</p>
+
+    <p>Parrafo b</p>
+
+    <p>Parrafo c</p>
+
+    <!-- Un enlace -->
+    <a href="www.google.es">google</a>
+
+    <!-- una lista no ordenada -->
+    <ul>
+      <li> Naranja </li>
+      <li> Limon </li>
+      <li> Cereza </li>
+    </ul>
+
+		<p>Parrafo d</p>
+
+    <p>Parrafo e</p>
+
+    <p id="num1"> </p>
+
+    <!--El javascript que leerá el número de elementos de cada tipo y lo mostrará
+    por pantalla -->
+    <script>
+      var x = document.getElementsByTagName("p");
+
+      //document.getElementById("num1").innerHTML = x;
+
+      var a, contador;
+
+      for (y in x) {
+        a = a +1;
+      }
+
+      //document.getElementById("num1"),innerHTML = a;
+
+      //Contabilizar el número de etiquetas de párrafo 'p'
+      contador = document.getElementsByTagName("p").length;
+      document.write ("<br> Numero de parrafos:" + contador);
+
+      //Contabilizar el número de etiquetas de enlace 'a'
+      contador = document.getElementsByTagName("a").length;
+      document.write ("<br> Numero de enlaces:" + contador);
+
+      //Contabilizar el número de etiquetas de lista no ordenada 'ul'
+      contador = document.getElementsByTagName("ul").length;
+      document.write ("<br> Numero de listas no ordenadas:" + contador);
+
+      contador = document.getElementsByTagName("li").length;
+      document.write ("<br> Numero de elementos de lista:" + contador);
+
+    </script>
+
+  </body>
+</html>

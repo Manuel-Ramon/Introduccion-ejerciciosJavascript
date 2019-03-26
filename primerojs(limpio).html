@@ -1,0 +1,83 @@
+<!doctype html> <!-- Define el documento bajo HTML5 -->
+<html>
+
+	<head>
+		<title>primero</title>
+	</head>
+
+	<body> <!-- He pensado en 3 filas, cada una tiene un cuadro de texto para la moneda original, un botón de conversión y otro cuadro de texto bloqueado donde aparecerá el resultado de la operación -->
+		<h1>Conversor de monedas</h1>
+
+		<p>
+			<div>
+				<!-- Al clicar en los botones se harán las conversiones de monedas. Si
+				no hay nada devuelve 0 -->
+				<label for="id1"> ($) </label>
+				<input id="id1" type="text" name="mon1">
+				<button onclick="DolarEuro()">$->€</button>
+				<input id="id2" type="text" name="mon2" readonly>
+				<label for="id2"> (€) </label>
+				<br>
+				<label for="id3"> (€) </label>
+				<input id="id3" type="text" name="mon3">
+				<button onclick="EuroDolar()">€->$</button>
+				<input id="id4" type="text" name="mon4" readonly>
+				<label for="id4"> ($) </label>
+				<br>
+				<br>
+				<label for="id5"> (€) </label>
+				<input id="id5" type="text" name="mon5">
+				<button onclick="EuroLibra()">€->&</button>
+				<input id="id6" type="text" name="mon6" readonly>
+				<label for="id6"> (L) </label>
+				<br>
+				<label for="id7"> (L) </label>
+				<input id="id7" type="text" name="mon7">
+				<button onclick="LibraEuro()">€->&</button>
+				<input id="id8" type="text" name="mon8" readonly>
+				<label for="id8"> (€) </label>
+
+			</div>
+		</p>
+
+		<script>
+			function DolarEuro () {
+				var s = document.getElementById('id1').value;
+
+				document.getElementById("id2").value = s * 0.883512;
+			}
+		</script>
+
+		<script>
+			function EuroDolar () {
+				//Obtengo el texto la etiqueta input con el identificador "id3"
+				var t = document.getElementById("id3").value;
+
+				//Cambio el valor del texto de la etiqueta input a la conversión adecuada
+				document.getElementById("id4").value = t * 1.13202;
+			}
+		</script>
+
+		<script>
+			function EuroLibra () {
+				//Obtengo el texto la etiqueta input con el identificador "id5"
+				var u = document.getElementById("id5").value;
+
+				//Cambio el valor del texto de la etiqueta input a la conversión adecuada
+				document.getElementById("id6").value = u * 0.858626;
+			}
+		</script>
+
+		<script>
+			function LibraEuro () {
+				//Obtengo el texto la etiqueta input con el identificador "id7"
+				var v = document.getElementById("id7").value;
+
+				//Cambio el valor del texto de la etiqueta input a la conversión adecuada
+				document.getElementById("id8").value = v * 1.16433;
+			}
+		</script>
+
+	</body>
+
+</html>

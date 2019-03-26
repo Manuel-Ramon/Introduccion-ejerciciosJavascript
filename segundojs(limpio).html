@@ -1,0 +1,133 @@
+<!doctype html> <!-- Define el documento bajo HTML5 -->
+<html>
+
+	<head>
+		<title>segundo</title>
+	</head>
+
+  <!-- Tendré en un JSON las correspondencias de productos y sus precios y en
+la página se mostrará cada producto más un input de tipo número a su derecha
+para elegir las cantidades. Al final de todo habrá un botón que al pulsarlo hará
+aparecer el precio del toda la compra -->
+  <body>
+
+    <h1>Precio de la compra </h1>
+
+    <br>
+
+    <!-- Esto es para pruebas, después borramos -->
+    <p id="demo10"></p>
+
+		<input id="pro11" type="text" readonly>
+		<input id="pro12" type="number" name="mon1">
+		<input id="pro13" type="text" readonly>
+		<br>
+		<input id="pro21" type="text" readonly>
+		<input id="pro22" type="number" name="mon1">
+		<input id="pro23" type="text" name="mon2" readonly>
+		<br>
+		<input id="pro31" type="text" name="mon2" readonly>
+		<input id="pro32" type="number" name="mon1">
+		<input id="pro33" type="text" name="mon2" readonly>
+		<br>
+		<input id="pro41" type="text" name="mon2" readonly>
+		<input id="pro42" type="number" name="mon1">
+		<input id="pro43" type="text" name="mon2" readonly>
+		<br>
+		<input id="pro51" type="text" name="mon2" readonly>
+		<input id="pro52" type="number" name="mon1">
+		<input id="pro53" type="text" name="mon2" readonly>
+		<br>
+
+  	<!-- El javascript con el JSON de la compra -->
+    <script>
+			//5 productos objetos JSON
+      var producto1 = {"nombre":"cereales", "precio":1.79};
+			var producto2 = {"nombre":"manzanas", "precio":1.32};
+			var producto3 = {"nombre":"arroz", "precio":0.89};
+			var producto4 = { "nombre":"suavizante", "precio":2.56};
+			var producto5 = { "nombre":"yogures", "precio":0.79};
+
+			//Un objeto JSON que contiene a su vez dentro objetos JSON
+			var estructuraJSON = {
+				"producto1": { "nombre":"helado", "precio":"3.38"},
+				"producto2": { "nombre":"manzanas", "precio":"1.32"},
+				"producto3": { "nombre":"arroz", "precio":"0.89"},
+				"producto4": { "nombre":"suavizante", "precio":"2.56"},
+				"producto5": { "nombre":"yogures", "precio":"0.79"}
+			};
+
+			//Esto es para acceder una clase de clase
+			//var ob_n1 = estructuraJSON.producto1.nombre;
+			//document.getElementById("demo10").innerHTML = ob_n1;
+			//var ob_p1 = estructuraJSON.producto1.precio;
+			//document.getElementById("demo12").innerHTML = ob_p1;
+
+			//var n1 = producto1.nombre;
+			var n1 = estructuraJSON.producto1.nombre;
+			var n2 = producto2.nombre;
+			var n3 = producto3.nombre;
+			var n4 = producto4.nombre;
+			var n5 = producto5.nombre;
+
+			//var p1 = producto1.precio;
+			var p1 = estructuraJSON.producto1.precio;
+			var p2 = producto2.precio;
+			var p3 = producto3.precio;
+			var p4 = producto4.precio;
+			var p5 = producto5.precio;
+
+			document.getElementById("pro11").value = n1;
+			document.getElementById("pro21").value = n2;
+			document.getElementById("pro31").value = n3;
+			document.getElementById("pro41").value = n4;
+			document.getElementById("pro51").value = n5;
+
+			document.getElementById("pro13").value = p1;
+			document.getElementById("pro23").value = p2;
+			document.getElementById("pro33").value = p3;
+			document.getElementById("pro43").value = p4;
+			document.getElementById("pro53").value = p5;
+
+			console.log();
+    </script>
+
+
+    <!-- Pondremos un botón e input de texto para mostrar el resultado  de la
+    compra cuando pulsemos dicho botón-->
+		<br>
+		<br>
+    <button onclick="calcular()">Calcular precio</button>
+    <br>
+    <input id="resultado" type="text" name="solucion" readonly>
+
+    <script>
+
+				function calcular() {
+					//Obtengo el texto la etiqueta input con el identificador "id5"
+					var cantidad1 = document.getElementById("pro12").value;
+					var precio1 = document.getElementById("pro13").value;
+
+					var cantidad2 = document.getElementById("pro22").value;
+					var precio2 = document.getElementById("pro23").value;
+
+					var cantidad3 = document.getElementById("pro32").value;
+					var precio3 = document.getElementById("pro33").value;
+
+					var cantidad4 = document.getElementById("pro42").value;
+					var precio4 = document.getElementById("pro43").value;
+
+					var cantidad5 = document.getElementById("pro52").value;
+					var precio5 = document.getElementById("pro53").value;
+
+					var res = (cantidad1 * precio1) + (cantidad2 * precio2) + (cantidad3 * precio3) + (cantidad4 * precio4) + (cantidad5 * precio5);
+					var igic = (res/100) * 11;
+					var resres = res + igic;
+
+					//Cambio el valor del texto de la etiqueta input a la conversión adecuada
+					document.getElementById("resultado").value = resres;
+				}
+    </script>
+
+  </body>
+</html>
